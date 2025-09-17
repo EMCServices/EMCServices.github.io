@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+        <title>
+            Welcome To EMC
+        </title>
+        
+
+    
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body {
+            height: 100%;
+            overflow:hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .entry-container {
+            height: 100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:radial-gradient(circle,black,rgb(3, 3, 3),rgb(60, 68, 182),rgb(92, 120, 196));
+            background-size:400% 400%;
+            animation:gradientShift 8s ease infinite;
+        }
+        @keyframes pulseGradient{
+            0%{
+                background-size: 200% 200%;
+                transform: scale(1);
+            }
+            100% {
+                background-size: 300% 300%;
+                transform:scale(1.05);
+            }
+        }
+        @keyframes gradientShift {
+            0%{
+                background-position: 0% 50%;
+            }
+            33% {
+                background-position: 50% 25%;
+            }
+            66% {
+                background-position: 100% 75%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .logo-button {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            width:300px;
+            height: 300px;
+            border-radius:50%;
+            background: rgb(3,3,3);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgb(3, 3, 3);
+            text-decoration: none;
+            transition:all 0.3s ease;
+            animation: logoFloat 4s ease-in-out infinite alternate;
+            cursor:pointer;
+
+        }
+        @keyframes logoFloat {
+            0%{
+                transform:translateY(-10px);
+
+            }
+            100%{
+                transform:translateY(10px);
+            }
+        }
+        .logo-button :hover {
+            transform:scale(1.1);
+            background:rgb(0, 0, 0,0,5);
+            border:2px solid rgb(74, 51, 138);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3 alpha);
+        }
+        .logo-button :active {
+            transform:scale(0.95);
+        }
+        .logo {
+            width:180px;
+            height:180px;
+            
+            background-size:contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position:relative;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #2c3e50, #34495e);
+            border-radius: 15px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            filter: drop-shadow(0 8px 16px rgba(0,0,0.4));
+            overflow:hidden;
+
+            
+            
+        }
+        .enter-text {
+            position:absolute;
+            bottom:80px;
+            color:rgba(255, 255, 255, 0.8);
+            font-size:16px;
+            letter-spacing:2px;
+            text-transform:uppercase;
+            animation:fadeInOut 2s ease-in-out infinite alternate;
+        }
+        @keyframes fadeInOut {
+            0%{
+                opacity:0.5;
+            }
+            100%{
+                opacity:1;
+            }
+        }
+        @media ( max-width: 768px) {
+            .logo-button {
+                width:250px;
+                height: 250px;
+            }
+            .logo {
+                width:100px;
+                height:100px;
+            }
+            .enter-text {
+                font-size:14px;
+                bottom:60px;
+            }
+        }
+        @media (max-width:480px){
+            .logo-button{
+                width:200px;
+                height: 200px;
+            }
+            .logo{
+                width:80px;
+                height: 80px;
+            }
+        }
+        .logo-text {
+            text-align:center;
+            z-index: 2;
+            position:relative;
+        }
+        .logo-main {
+            font-size: 32px;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            margin-bottom: -5px;
+            letter-spacing:3px;
+        }
+        .logo-sub {
+            font-size:12px;
+            font-weight: 600;
+            color:#bdc3c7;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            letter-spacing:2px;
+            margin-bottom:5px;
+        }
+        .sparkle {
+            position:absolute;
+            width:4px;
+            height:4px;
+            background:rgba(87, 186, 243, 0.9);
+            border-radius:50%;
+            box-shadow:0 0 6px rgba(87,186,243,0.9);
+        }
+        .sparkle1 {
+            top:10%;
+            left:20%;
+            animation: sparklefall1 3s ease-in-out infinite;
+
+        }
+        .sparkle2 {
+            top:5%;
+            left:70%;
+            animation:sparklefall2 4s ease-in-out infinite 1s;
+        }
+        .sparkle3 {
+            top:15%;
+            left:50%;
+            animation: sparklefall3 3.5s ease-in-out infinite 0.5s;
+        }
+        .sparkle4 {
+            top:20%;
+            left:30%;
+            animation: sparklefall4 2.5s ease-in-out infinite 2s;
+        }
+        .sparkle5 {
+            top: 25%;
+            left: 40%;
+            animation: sparklefall5 2s ease-in-out infinite  5s;
+        }
+        .sparkle6 {
+            bottom:10%;
+            right:20%;
+            animation: sparklefall6 3s ease-in-out infinite 3s;
+        }
+        .sparkle7 {
+            bottom:20%;
+            right:30%;
+            animation: sparklefall7 4s ease-in-out infinite 4s;
+        }
+        .sparkle8 {
+            bottom:10%;
+            right:50%;
+            animation: sparklefall8 3s ease-in-out infinite 3s;
+        }
+        .sparkle9 {
+            bottom:20%;
+            right:70%;
+            animation: sparklefall9 4s ease-in-out infinite 2s;
+        }
+        .sparkle10 {
+            bottom:10%;
+            right: 80%;
+            animation: sparklefall10 3s ease-in-out infinite 3s;
+        }
+        @keyframes sparklefall1 {
+            0%{
+                opacity:1;
+                transform:translateY(1px) scale(1);
+            }
+            50% {
+                opacity:0.7;
+                transform:translateY(50px) translatex( 15px) scale(0.8);
+            }
+            100%{
+                opacity:0;
+                transform:translateY(100px) translatex(30px) scale(0.3);
+            }
+        }
+        @keyframes sparklefall2 {
+            0% {
+                opacity:1;
+                transform:translateY(1px) translateX(1px) scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform:translateY(40px) translateX(10px) scale(0.9);
+            }
+            100% {
+                opacity:0;
+                transform:translateY(80px) translateX(-20px) scale(0.4);
+            }
+        }
+        @keyframes sparklefall3 {
+            0% {
+                opacity:1;
+                transform:translateY(1px) translateX(1px) scale(1);
+            }
+            50% {
+                opacity:0.6;
+                transform: translateY(60px) translateX(15px) scale(0.7);
+
+            }
+            100%{
+                opacity: 0;
+                transform: translateY(120px) translateX(-30px) scale(0.2);
+
+            }
+        }
+        @keyframes sparklefall4 {
+            0% {
+                opacity:1;
+                transform:Translatey(1px) translatex(1px) scale(1);
+            }
+            50% {
+                opacity:0.4;
+                transform:translatey(70px) translatex(-10px) scale(0.5);
+            }
+            100% {
+                opacity:0;
+                transform:translatey(80px) translatex(10px) scale(0.1);
+            }
+        }
+        @keyframes sparklefall5 {
+            0% {
+                opacity:1;
+                transform:translateY(1px) translatex(1px) scale(1);
+            }
+            50% {
+                opacity:0.3;
+                transform:translateY(50px) translatex(-15px) scale(0.9);
+            }
+            100% {
+                opacity:0;
+                transform:translatey(80px) translatex(15px) scale(0.2);
+            }
+        }
+        @keyframes sparklefall6 {
+            0% {
+                opacity:1;
+                transform:translatey(-1px) translatex(-1px) scale(1);
+            }
+            50% {
+                opacity:0.5;
+                transform:translatey(-50px) translatex(-5px) scale(0.9);
+            }
+            100% {
+                opacity:0.3;
+                transform:translatey(-80px) translatex(5px) scale(0.3);
+            }
+        }
+        @keyframes sparklefall7 {
+            0% {
+                opacity:1;
+                transform:translatey(-1px) translatex(-1px)scale(1);
+            }
+            50% {
+                opacity:0.7;
+                transform:translatey(-15px) translatex(10px) scale(0.7);
+            }
+            100% {
+                opacity:0.5;
+                transform:translatey(-75px) translatex(-10px) scale(0.5)
+            }
+        }
+        @keyframes sparklefall8 {
+            0% {
+                opacity:1;
+                transform:translatey(1px) translatex(1px) scale(1);
+
+            }
+            50% {
+                opactiy:0.7;
+                transform:translatey(-35px) translatex(-25px) scale(0.9);
+            }
+            100% {
+                opacity:0.3;
+                transform:translatey(-70px) translatex(20px) scale(0.5);
+            }
+        }
+        @keyframes sparklefall9 {
+            0% {
+                opacity:1;
+                transform:translatey(-0px) translate(-0px) scale(1);
+
+            }
+            50% {
+                opacity:0.7;
+                transform:translatey(-55px) translatex(-40px) scale(0.5);
+
+            }
+            100% {
+                opacity:0.5;
+                transform:translatey(-77px) translatex(80px) scale(0.3);
+            }
+        }
+        @keyframes sparklefall10 {
+            0% {
+                opacity:1;
+                transform:translatey(0px) translatex(0px) scale(1);
+
+            }
+            50% {
+                opacity:0.7;
+                transform:translatey(-50px) translatex(40px) scale(0.8);
+            }
+            100% {
+                opacity:0.3;
+                transform:translatey(-79px) translatex(10px) scale(0.5);
+            }
+        }
+        
+
+        
+        
+        
+
+    </style>
+    </head>
+    <body>
+        <div class="entry-container">
+            <a href="projectemc.html" class="logo-button">
+                <div class="logo">
+                    <div class="logo-text">
+                        <div class="logo-main">EMC</div>
+                        <div class="logo-sub">SERVICES</div> 
+                    </div>
+                    <div class="sparkle sparkle1"></div>
+                    <div class="sparkle sparkle2"></div>
+                    <div class="sparkle sparkle3"></div>
+                    <div class="sparkle sparkle4"></div>
+                    <div class="sparkle sparkle5"></div>
+                    <div class="sparkle sparkle6"></div>
+                    <div class="sparkle sparkle7"></div>
+                    <div class="sparkle sparkle8"></div>
+                    <div class="sparkle sparkle9"></div>
+                    <div class="sparkle sparkle10"></div>
+                </div>
+
+            </a>
+            <div class="enter-text">Click to Enter</div>
+        </div>
+
+    </body>
+    <footer>
+        
+    </footer>
+</html>
